@@ -85,6 +85,14 @@
       "workbox-precaching": "7.3.0"
     },
     "hash": "2a88bdb71308ac8049773ff4d7a9eb2c1c32e8d563aff213876243fdc7084001"
+      "typescript": "4.9.5",
+      "vite": "3.2.7",
+      "vite-plugin-checker": "0.5.4",
+      "workbox-build": "6.5.4",
+      "workbox-core": "6.5.4",
+      "workbox-precaching": "6.5.4"
+    },
+    "hash": "1851d28e00485d818a6ae15d167c4e9eaa17ebbab6522820ff17b69d3c57cc05"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
