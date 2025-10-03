@@ -1,0 +1,19 @@
+name: PR Notification
+
+# O workflow será disparado quando um pull request for aberto, sincronizado ou reaberto.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Ação para enviar uma notificação via GitHub Notifications
+      - name: Notify pull request creator
+        uses: peter-evans/slack-notify@v1
+        with:
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          message: 'Novo Pull Request criado ou atualizado: ${{ github.event.pull_request.title }} por @${{ github.actor }}'
+          
