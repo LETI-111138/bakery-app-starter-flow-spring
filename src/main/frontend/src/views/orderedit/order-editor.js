@@ -1,6 +1,5 @@
 import { html, css, LitElement } from 'lit';
 import '@vaadin/icons/vaadin-icons.js';
-import '@vaadin/text-field';
 import '@vaadin/button';
 import '@vaadin/combo-box';
 import '@vaadin/date-picker';
@@ -13,6 +12,48 @@ import { ScrollShadowMixin } from '../../components/utils-mixin.js';
 import './order-item-editor.js';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+/**
+ * `OrderEditor` é um componente LitElement que permite editar os detalhes de um pedido, incluindo o status do pedido,
+ * a data e hora de entrega, informações do cliente e os produtos solicitados.
+ * Ele fornece um formulário responsivo com campos de entrada como caixas de seleção, campos de texto e campos de data.
+ * Além disso, o componente exibe um total de preço do pedido e permite revisar o pedido antes de finalizá-lo.
+ * <p>
+ * O layout é flexível e se adapta ao tamanho da tela, com a capacidade de alternar entre exibição em uma única coluna
+ * ou várias colunas dependendo do tamanho da tela.
+ * </p>
+ *
+ * @slot - Slot para adicionar conteúdo personalizado, como itens de produtos ou outras informações.
+ * 
+ * @csspart form1responsiveSteps - Responsividade do primeiro formulário.
+ * @csspart form2responsiveSteps - Responsividade do segundo formulário.
+ * @csspart form3responsiveSteps - Responsividade do terceiro formulário.
+ * 
+ * @example
+ * <order-editor>
+ *   <vaadin-text-field label="Customer Name" value="John Doe"></vaadin-text-field>
+ * </order-editor>
+ * 
+ * @css
+ * .meta-row {
+ *   display: flex;
+ *   justify-content: space-between;
+ *   padding-bottom: var(--lumo-space-s);
+ * }
+ * 
+ * .dim {
+ *   color: var(--lumo-secondary-text-color);
+ *   text-align: right;
+ *   white-space: nowrap;
+ *   line-height: 2.5em;
+ * }
+ * 
+ * .status {
+ *   width: 10em;
+ * }
+ * 
+ * @author Tiago Eliseu
+ * @version 1.0
+ */
 class OrderEditor extends ScrollShadowMixin(LitElement) {
   static get styles() {
     return [

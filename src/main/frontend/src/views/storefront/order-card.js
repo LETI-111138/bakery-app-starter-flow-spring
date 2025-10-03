@@ -3,6 +3,44 @@ import { map } from 'lit/directives/map.js';
 import './order-status-badge.js';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+/**
+ * `OrderCard` é um componente LitElement utilizado para exibir um cartão com informações detalhadas sobre um pedido.
+ * O componente mostra o status do pedido, informações de data e hora, dados do cliente e lista de itens do pedido.
+ * Ele é ideal para exibir informações de pedidos em um formato compacto e visualmente organizado.
+ * <p>
+ * O cartão possui um layout responsivo que se adapta a diferentes tamanhos de tela e inclui um estilo visual que 
+ * destaca o status do pedido, a quantidade de itens, e o local da entrega. Também há um evento personalizado de 
+ * clique no cartão.
+ * </p>
+ * 
+ * @slot - Não há slots definidos diretamente no componente, mas o conteúdo pode ser personalizado a partir das propriedades.
+ * 
+ * @csspart badge - Estilos aplicados à parte do componente que exibe o status do pedido.
+ * @csspart goods-item - Estilos aplicados à exibição de itens dentro do pedido.
+ * 
+ * @example
+ * <order-card .orderCard="${orderDetails}">
+ * </order-card>
+ * 
+ * @css
+ * .wrapper {
+ *   background: var(--lumo-base-color);
+ *   background-image: linear-gradient(var(--lumo-tint-5pct), var(--lumo-tint-5pct));
+ *   box-shadow: 0 3px 5px var(--lumo-shade-10pct);
+ *   border-bottom: 1px solid var(--lumo-shade-10pct);
+ *   display: flex;
+ *   padding: var(--lumo-space-l) var(--lumo-space-m);
+ *   cursor: pointer;
+ * }
+ * 
+ * .badge {
+ *   margin: var(--lumo-space-s) 0;
+ *   width: 100px;
+ * }
+ * 
+ * @author Guilherme Teixeira
+ * @version 1.0
+ */
 class OrderCard extends LitElement {
   static get styles() {
     return [

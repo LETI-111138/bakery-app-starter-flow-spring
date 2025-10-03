@@ -7,6 +7,36 @@ import '../storefront/order-card.js';
 import './dashboard-counter-label.js';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+/**
+ * O componente `DashboardView` é uma visualização de painel que exibe várias métricas e gráficos relacionados ao sistema de pedidos.
+ * Ele é projetado para mostrar contadores, gráficos e uma tabela de pedidos em um layout de painel responsivo.
+ * <p>
+ * O componente utiliza o Vaadin Board para estruturar os elementos de maneira flexível e responsiva, e integra gráficos para exibir 
+ * as métricas de vendas e entregas. Ele também utiliza a estrutura `dashboard-counter-label` para exibir informações resumidas sobre
+ * o estado dos pedidos, como o número de pedidos entregues, novos pedidos e pedidos não disponíveis.
+ * </p>
+ * 
+ * @slot - Slot para adicionar conteúdo dinâmico ao painel, como gráficos ou cartões personalizados.
+ * 
+ * @csspart counter-label - O estilo aplicado à parte do contador, permitindo a personalização de cada métrica.
+ * @csspart chart - O estilo aplicado aos gráficos, permitindo a personalização da aparência.
+ * 
+ * @example
+ * <dashboard-view>
+ *   <vaadin-chart id="deliveriesGraph" theme="classic"></vaadin-chart>
+ * </dashboard-view>
+ * 
+ * @css
+ * .column-chart {
+ *   box-shadow: 0 2px 5px 0 rgba(23, 68, 128, 0.1);
+ *   border-radius: 4px;
+ *   height: calc(20vh - 64px) !important;
+ *   min-height: 150px;
+ * }
+ * 
+ * @author Guilherme Teixeira
+ * @version 1.0
+ */
 class DashboardView extends LitElement {
   static get styles() {
     return [

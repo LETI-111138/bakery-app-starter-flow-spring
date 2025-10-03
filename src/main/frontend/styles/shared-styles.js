@@ -1,6 +1,40 @@
 import { css } from "lit";
 
-// shared styles for all LitTemplate based views
+/**
+ * Estilos compartilhados aplicados a todas as visualizações baseadas em LitTemplate.
+ * Esses estilos garantem que as visualizações tenham uma aparência consistente e reativa.
+ * Inclui estilos básicos de layout, como **box-sizing**, ocultação de elementos, estilos para
+ * títulos (h2, h3), e estilos para componentes como contadores e áreas roláveis.
+ * 
+ * @example
+ * <style>
+ *   ${sharedStyles}
+ * </style>
+ * 
+ * @css
+ * :host([hidden]), [hidden] {
+ *   display: none !important;
+ * }
+ * 
+ * h2, h3 {
+ *   margin-top: var(--lumo-space-m);
+ *   margin-bottom: var(--lumo-space-s);
+ * }
+ * 
+ * .scrollable {
+ *   padding: var(--lumo-space-m);
+ *   overflow: auto;
+ * }
+ * 
+ * .count {
+ *   background: var(--lumo-shade-10pct);
+ *   border-radius: var(--lumo-border-radius);
+ * }
+ * </style>
+ * 
+ * @author Guilherme Teixeira
+ * @version 1.0
+ */
 export const sharedStyles = css`
   *,
   *::before,

@@ -5,6 +5,46 @@ import '@vaadin/icon';
 import '@vaadin/icons';
 import '@vaadin/text-field';
 
+/**
+ * `SearchBar` é um componente de barra de pesquisa com um campo de entrada, um botão de ação, e uma opção de filtro adicional.
+ * Ele é projetado para ser flexível e responsivo, permitindo incluir um campo de pesquisa, uma caixa de seleção para filtros,
+ * e um botão para disparar uma ação.
+ * 
+ * @slot left - Slot para adicionar conteúdo à esquerda do campo de pesquisa (normalmente um ícone ou botão).
+ * @slot right - Slot para adicionar conteúdo à direita do campo de pesquisa (normalmente um botão ou ícone).
+ * @slot info - Slot opcional para conteúdo adicional, como filtros extra.
+ * 
+ * @csspart info - A parte do componente que exibe as informações, como filtros adicionais.
+ * 
+ * @example
+ * <search-bar
+ *   field-placeholder="Search"
+ *   field-value=""
+ *   button-text="Search"
+ *   checkbox-text="Show extras"
+ *   show-checkbox
+ *   show-extra-filters
+ * ></search-bar>
+ * 
+ * @css
+ * :host {
+ *   position: relative;
+ *   display: flex;
+ *   flex-direction: column;
+ *   padding: 0 var(--lumo-space-s);
+ *   background-color: var(--lumo-base-color);
+ *   box-shadow: 0 0 16px 2px var(--lumo-shade-20pct);
+ * }
+ * 
+ * @media (min-width: 700px) {
+ *   :host {
+ *     flex-direction: row;
+ *   }
+ * }
+ * 
+ * @author Guilherme Teixeira
+ * @version 1.0
+ */
 class SearchBar extends LitElement {
   static get styles() {
     return css`
@@ -15,10 +55,7 @@ class SearchBar extends LitElement {
         flex-direction: column;
         overflow: hidden;
         padding: 0 var(--lumo-space-s);
-        background-image: linear-gradient(
-          var(--lumo-shade-20pct),
-          var(--lumo-shade-20pct)
-        );
+        background-image: linear-gradient(var(--lumo-shade-20pct), var(--lumo-shade-20pct));
         background-color: var(--lumo-base-color);
         box-shadow: 0 0 16px 2px var(--lumo-shade-20pct);
         order: 1;

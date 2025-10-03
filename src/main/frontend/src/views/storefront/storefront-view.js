@@ -5,6 +5,31 @@ import '../../components/search-bar.js';
 import './order-card.js';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+/**
+ * `StorefrontView` é um componente LitElement que exibe a visualização principal de pedidos, incluindo uma barra de pesquisa,
+ * uma grade de pedidos e um diálogo para interações adicionais. Este componente é ideal para uma página de vitrine
+ * de pedidos em um sistema de pedidos de alimentos ou serviços.
+ * 
+ * Ele utiliza o **`vaadin-grid`** para exibir uma lista de pedidos e um **`vaadin-dialog`** para mostrar detalhes ou ações
+ * adicionais relacionados aos pedidos.
+ * 
+ * @slot - Não há slots definidos diretamente no componente, mas ele pode ser estendido com conteúdo dinâmico.
+ * 
+ * @example
+ * <storefront-view>
+ *   <!-- Conteúdo personalizado aqui -->
+ * </storefront-view>
+ * 
+ * @css
+ * :host {
+ *   display: flex;
+ *   flex-direction: column;
+ *   height: 100%;
+ * }
+ * 
+ * @author Tiago Eliseu
+ * @version 1.0
+ */
 class StorefrontView extends LitElement {
   static get styles() {
     return [
@@ -33,6 +58,10 @@ class StorefrontView extends LitElement {
     return 'storefront-view';
   }
 
+  /**
+   * Método chamado quando o componente é inicializado. Aqui, ele mede o desempenho de carregamento da página.
+   * Ele também adiciona um ouvinte de evento para o **`vaadin-grid`** para marcar quando a página foi carregada.
+   */
   ready() {
     super.ready();
 

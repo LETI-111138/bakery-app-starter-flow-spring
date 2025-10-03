@@ -8,6 +8,42 @@ import '@vaadin/integer-field';
 import '@vaadin/text-field';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+/**
+ * `OrderItemEditor` é um componente LitElement usado para editar os detalhes de um item de pedido.
+ * Ele permite selecionar um produto, definir a quantidade, visualizar o preço e adicionar um comentário.
+ * O componente é responsivo e adapta o layout dependendo do tamanho da tela.
+ * <p>
+ * O editor de item inclui campos como:
+ * - **Produto** (através de um combo-box),
+ * - **Quantidade** (com campo de número),
+ * - **Preço** (que é calculado e exibido automaticamente),
+ * - **Comentário** (campo de texto livre).
+ * </p>
+ * 
+ * @slot - Slot para adicionar conteúdo dinâmico, como ícones ou botões personalizados.
+ * 
+ * @csspart product - Estilos aplicados ao layout do produto, incluindo o combo-box e outros elementos relacionados ao produto.
+ * @csspart delete - Estilos para o botão de deletar item.
+ * 
+ * @example
+ * <order-item-editor>
+ *   <vaadin-combo-box label="Product" value="Product A"></vaadin-combo-box>
+ *   <vaadin-integer-field label="Quantity" value="1"></vaadin-integer-field>
+ * </order-item-editor>
+ * 
+ * @css
+ * .product {
+ *   margin-bottom: 1em;
+ * }
+ * 
+ * .delete {
+ *   min-width: 2em;
+ *   padding: 0;
+ * }
+ * 
+ * @author Tiago Eliseu
+ * @version 1.0
+ */
 class OrderItemEditor extends LitElement {
   static get styles() {
     return [

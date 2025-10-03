@@ -13,6 +13,28 @@ import { ScrollShadowMixin } from '../../components/utils-mixin.js';
 import '../storefront/order-status-badge.js';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+/**
+ * `OrderDetails` é um componente LitElement que exibe os detalhes completos de um pedido, incluindo informações
+ * do cliente, produtos, histórico de eventos e a possibilidade de adicionar um comentário.
+ * O componente é utilizado para exibir o status de um pedido, seus itens, e informações sobre a entrega.
+ * Ele também permite editar ou cancelar o pedido com base no estado do mesmo.
+ * <p>
+ * O layout é responsivo e adapta-se conforme o tamanho da tela, exibindo os campos de forma adequada para dispositivos móveis e desktops.
+ * </p>
+ *
+ * @slot - Slot para conteúdo dinâmico, como gráficos, status ou outros componentes personalizados.
+ * 
+ * @example
+ * <order-details>
+ *   <order-status-badge slot="status" status="delivered"></order-status-badge>
+ * </order-details>
+ * 
+ * @csspart form1responsiveSteps - Responsividade do primeiro formulário.
+ * @csspart form2responsiveSteps - Responsividade do segundo formulário.
+ * 
+ * @author Guilherme Teixeira
+ * @version 1.0
+ */
 class OrderDetails extends ScrollShadowMixin(LitElement) {
   static get styles() {
     return [
@@ -230,8 +252,7 @@ class OrderDetails extends ScrollShadowMixin(LitElement) {
                     ></order-status-badge>
                   </div>
                   <div class="comment">${event.message}</div>
-                `
-              )}
+                `)}
             </vaadin-form-item>
 
             <vaadin-form-item id="comment" .hidden="${this.review}">
