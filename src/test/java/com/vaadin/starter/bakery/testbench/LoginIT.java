@@ -1,7 +1,7 @@
 package com.vaadin.starter.bakery.testbench;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
 
 import com.vaadin.starter.bakery.testbench.elements.ui.DashboardViewElement;
 import com.vaadin.starter.bakery.testbench.elements.ui.LoginViewElement;

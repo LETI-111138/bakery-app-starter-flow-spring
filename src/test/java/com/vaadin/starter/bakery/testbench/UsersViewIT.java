@@ -3,7 +3,6 @@ package com.vaadin.starter.bakery.testbench;
 import java.util.Random;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 import com.vaadin.flow.component.tabs.testbench.TabElement;
 import com.vaadin.flow.component.textfield.testbench.EmailFieldElement;
