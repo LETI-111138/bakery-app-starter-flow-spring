@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 "Linha modificada dentro da main" 
+=======
+"Linha modificada" 
+>>>>>>> cf_demo
