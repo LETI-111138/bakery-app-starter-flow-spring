@@ -1,6 +1,7 @@
 /**
  * Adds the scroll-shadow attribute if there is a `#main` element with scrollsize
  * larger than its height, and there is hidden content at the bottom.
+ * conflito eminente....
  */
 export const ScrollShadowMixin = (subclass) =>
   class extends subclass {
